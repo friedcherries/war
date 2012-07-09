@@ -2,12 +2,29 @@
 
 require_once 'Base.php';
 
+/**
+ * Card class for our game of War
+ */
 class Card extends Base {
 
+	/**
+	 * @var string suit of the card
+	 */
 	protected $suit;
+
+	/**
+	 * @var int numeric value of the card
+	 */
 	protected $value;
+
+	/**
+	 * @var bool whether card is a face card
+	 */
 	protected $faceCard;
 
+	/**
+	 * default constructor
+	 */
 	public function __construct($suit, $value) {
 		parent::__construct();
 		$this->suit = $suit;
@@ -20,10 +37,18 @@ class Card extends Base {
 		}
 	}
 
+	/**
+	 * Returns a printable version of the card
+	 * @return string 
+	 */
 	public function display() {
 		return ($this->faceCard() == null ? $this->value : $this->faceCard()) . ' of ' . $this->suit;
 	}
 
+	/**
+	 * Returns the type of face card
+	 * @return string
+	 */
 	public function faceCard() {
 		$return = null;
 		
