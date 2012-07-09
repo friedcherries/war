@@ -8,6 +8,10 @@ class Base {
 		$this->reflection = new \ReflectionObject($this);
 	}
 
+	public function __wakeup() {
+		$this->reflection = new \ReflectionObject($this);
+	}
+
 	public function __get($var) {
 		if ($this->hasProperty($var)) {
 			return $this->$var;

@@ -1,11 +1,13 @@
 <?php
 
-$array = array(1,2,3);
+require_once 'lib/War.php';
 
-array_push($array, 4);
+$war = new War();
+$war->shuffle(3);
+$war->deal();
+$war->playHand();
+test($war->player1_card);
 
-print_r($array);
-
-array_pop($array);
-
-print_r($array);
+function test($card) {
+	print_r($card);
+}

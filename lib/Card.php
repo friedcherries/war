@@ -38,6 +38,7 @@ class Card extends Base {
 					break;
 				case 13:
 					$return = 'King';
+					break;
 				case 14:
 					$return = 'Ace';
 					break;
